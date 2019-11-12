@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="user"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2019-11-10 07:27:38 PM"/>
+        <attribute name="created" value="dXNlcjtBQ0VSOzIwMTktMTEtMTA7MDY6NTA6MjQgUE07MjAwNg=="/>
+        <attribute name="edited" value="dXNlcjtBQ0VSOzIwMTktMTEtMTA7MDc6Mjc6MzggUE07MTsyMTI0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Diameter" type="Integer" array="False" size=""/>
+            <declare name="Radius" type="Integer" array="False" size=""/>
+            <declare name="Area" type="Integer" array="False" size=""/>
+            <declare name="Answer" type="String" array="False" size=""/>
+            <declare name="Again" type="String" array="False" size=""/>
+            <declare name="ExitCode" type="Boolean" array="False" size=""/>
+            <assign variable="ExitCode" expression="true"/>
+            <output expression="&quot;Welcome sa Calculator ni Poy na nagsasagot kung gaano kalaki ang inyong bilog&quot;" newline="True"/>
+            <while expression="ExitCode == true">
+                <output expression="&quot;Ano ang gagamitin Radius o Diameter?&quot;" newline="True"/>
+                <input variable="Answer"/>
+                <if expression="Answer == &quot;Radius&quot;">
+                    <then>
+                        <output expression="&quot;Ilagay ang Radius&quot;" newline="True"/>
+                        <input variable="Radius"/>
+                        <assign variable="Area" expression="3.14 * Radius ^ 2"/>
+                        <output expression="&quot;Ang bilog ay may sukat na: &quot; &amp; Area" newline="True"/>
+                        <output expression="&quot;Gusto mo bang subukan uli?&quot;" newline="True"/>
+                        <input variable="Again"/>
+                        <if expression="Again == &quot;oo&quot;">
+                            <then/>
+                            <else>
+                                <breakpoint/>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <if expression="Answer == &quot;Diameter&quot;">
+                            <then>
+                                <output expression="&quot;Ilagay ang Diameter&quot;" newline="True"/>
+                                <input variable="Diameter"/>
+                                <assign variable="Area" expression="(3.14/4) ^ Diameter ^ 2"/>
+                                <output expression="&quot;Ang bilog ay may sukat na: &quot; &amp; Area" newline="True"/>
+                                <output expression="&quot;Gusto mo bang subukan uli?&quot;" newline="True"/>
+                                <input variable="Again"/>
+                                <if expression="Again == &quot;oo&quot;">
+                                    <then/>
+                                    <else>
+                                        <breakpoint/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <output expression="&quot;Sabi ko Diameter at Radius lang&quot;" newline="True"/>
+                                <output expression="&quot;Bat pa maghahanap ng iba&quot;" newline="True"/>
+                                <output expression="&quot;Gusto mo bang subukan ulit?&quot;" newline="True"/>
+                                <input variable="Again"/>
+                                <if expression="Again == &quot;oo&quot;">
+                                    <then/>
+                                    <else>
+                                        <breakpoint/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
